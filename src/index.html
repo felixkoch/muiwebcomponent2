@@ -2,8 +2,15 @@
 <html>
   <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.4.0/webcomponents-bundle.js"></script>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
+    <span>test</span>
   </body>
 </html>

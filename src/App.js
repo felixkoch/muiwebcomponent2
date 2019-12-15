@@ -1,10 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
-const App = ({ title }) => <div>{title}</div>;
-
-App.propTypes = {
-  title: PropTypes.string.isRequired,
-};
+function App() {
+  return (
+    <Button variant="contained" color="primary">
+      Hello World
+    </Button>
+  );
+}
 
 export default App;

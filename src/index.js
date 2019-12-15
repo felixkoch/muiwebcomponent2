@@ -1,13 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import App from './App';
+import { StylesProvider, jssPreset } from '@material-ui/styles';
+import { create } from 'jss';
 
-const title = 'React with Webpack and Babel';
+import App from "./App";
+
+const shadowRoot = document
+  .getElementById("app")
+  .attachShadow({ mode: "closed" });
+
+const reactRoot = shadowRoot.appendChild(document.createElement("div"));
+
+const jss = create({
+  ...jssPreset(),
+  insertionPoint: reactRoot
+});
 
 ReactDOM.render(
-  <App title={title} />,
-  document.getElementById('app')
+  <StylesProvider jss={jss}>
+      <App />
+  </StylesProvider>,
+  reactRoot
 );
 
 module.hot.accept();
